@@ -1,0 +1,24 @@
+# permissions for end users to edit gcrds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: gcrd-editor-role
+rules:
+- apiGroups:
+  - app.gcrd.jerry153fish.com
+  resources:
+  - gcrds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - app.gcrd.jerry153fish.com
+  resources:
+  - gcrds/status
+  verbs:
+  - get

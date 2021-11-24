@@ -1,0 +1,6 @@
+apiVersion: app.gcrd.jerry153fish.com/v1alpha1
+kind: GCRD
+metadata:
+  name: gcrd-sample
+spec:
+  # Add fields here
