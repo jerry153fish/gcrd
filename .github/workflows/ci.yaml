@@ -1,0 +1,13 @@
+name: GCRD CI
+on: [push]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the latest code
+        uses: actions/checkout@v2
+
+      - name: Tests
+        run: |
+          make test

@@ -33,7 +33,10 @@ import (
 
 	appv1alpha1 "github.com/jerry153fish/gcrd/api/v1alpha1"
 	"github.com/jerry153fish/gcrd/controllers"
+
 	//+kubebuilder:scaffold:imports
+
+	prometheusapiv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
 )
 
 var (
@@ -45,6 +48,7 @@ func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
 	utilruntime.Must(appv1alpha1.AddToScheme(scheme))
+	utilruntime.Must(prometheusapiv1.AddToScheme(scheme))
 	//+kubebuilder:scaffold:scheme
 }
 
