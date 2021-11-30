@@ -1,0 +1,19 @@
+name: GCRD CI
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ["1.16"]
+    name: Go ${{ matrix.go }} test
+    steps:
+      - name: Checkout the latest code
+        uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+      - name: Tests
+        run: |
+          make test
